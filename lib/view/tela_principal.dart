@@ -60,8 +60,26 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 shadowColor: Colors.red,
                 elevation: 10,
                 child: ListTile(
+                  leading: Icon(Icons.public, size: 30),
                   title: Text(dados[index].nome),
                   subtitle: Text('Capital ${dados[index].capital}'),
+                  trailing: Icon(Icons.arrow_right, size: 30),
+
+                  //EVENTO DE CLIQUE
+                  hoverColor: Colors.blue,
+                  onTap: (){
+                    //
+                    // NAVEGAÇÃO
+                    //
+                    var obj = dados [index];
+
+                    Navigator.pushNamed(
+                      context, 
+                      't2',
+                      arguments: obj,
+
+                      );
+                  },
                 ),
               );
             }),
